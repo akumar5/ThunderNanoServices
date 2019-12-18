@@ -570,11 +570,11 @@ namespace Plugin {
                 EXITSCENELOCK();
             }
 
-            virtual void onScrollWheel(float dx, float dy) override
+            virtual void onScrollWheel(int32_t dx, int32_t dy) override
             {
                 ENTERSCENELOCK();
                 if (_view != nullptr) {
-                    _view->onScrollWheel(dx, dy);
+                    _view->onScrollWheel(static_cast<float>(dx), static_cast<float>(dy));
                 }
                 EXITSCENELOCK();
             }
